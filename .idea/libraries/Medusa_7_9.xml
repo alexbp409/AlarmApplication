@@ -1,6 +1,5 @@
 <component name="libraryTable">
-  <library name="eu.hansolo:Medusa:7.9" type="repository">
-    <properties maven-id="eu.hansolo:Medusa:7.9" />
+  <library name="Medusa-7.9">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/lib/Medusa-7.9.jar!/" />
     </CLASSES>
