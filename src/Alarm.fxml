@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.weathericons.WeatherIconView?>
+<?import eu.hansolo.medusa.Clock?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #58CDBD;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Alarm">
+   <children>
+      <Clock layoutX="104.0" layoutY="75.0" running="true" skinType="YOTA2" />
+      <MaterialDesignIconView glyphName="work" layoutX="510.0" layoutY="99.0" size="60" />
+      <MaterialDesignIconView glyphName="ALARM" layoutX="510.0" layoutY="349.0" size="60" />
+      <WeatherIconView glyphName="RAIN" layoutX="506.0" layoutY="222.0" size="60" wrappingWidth="67.984375" />
+      <JFXDrawer direction="RIGHT" layoutX="480.0" prefHeight="400.0" prefWidth="120.0" />
+   </children>
+</AnchorPane>
