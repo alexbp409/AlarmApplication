@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTimePicker?>
+<?import eu.hansolo.medusa.Clock?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dalex.alarm.AlarmGUIController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="163.0" layoutX="374.0" layoutY="27.0" stroke="#ff9000" strokeType="INSIDE" width="200.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.4534883720930233">
+               <stops>
+                  <Stop color="#0088ff" />
+                  <Stop color="#ffffff00" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="250.0" layoutX="78.0" layoutY="67.0" stroke="#fffafa00" strokeType="INSIDE" width="250.0">
+         <fill>
+            <RadialGradient centerX="0.5111111111111111" centerY="0.5" radius="0.4534883720930233">
+               <stops>
+                  <Stop color="#0084ff" />
+                  <Stop color="#fa000000" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="233.0" layoutX="350.0" layoutY="177.0" strokeType="INSIDE" width="260.0">
+         <stroke>
+            <RadialGradient centerX="0.5" centerY="0.5" proportional="false" radius="0.4534883720930233">
+               <stops>
+                  <Stop color="#0088ff" />
+                  <Stop color="#c91c6d00" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </stroke>
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.4534883720930233">
+               <stops>
+                  <Stop color="#ff9000" />
+                  <Stop color="TRANSPARENT" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <JFXTimePicker fx:id="time" defaultColor="#ff9000" layoutX="401.0" layoutY="236.0" promptText="Enter Time" />
+      <JFXDatePicker fx:id="date" defaultColor="#ff9000" layoutX="401.0" layoutY="264.0" promptText="Enter Date" />
+      <Clock fx:id="clock" backgroundPaint="#ffffff00" borderPaint="#ffffff00" layoutX="78.0" layoutY="67.0" lcdDesign="BLUE" running="true" skinType="PEAR" />
+      <Label fx:id="weather" layoutX="498.0" layoutY="55.0" prefHeight="108.0" prefWidth="61.0" textAlignment="CENTER" />
+      <ImageView fx:id="weather_icon" fitHeight="108.0" fitWidth="114.0" layoutX="384.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="btn_help" buttonType="RAISED" layoutX="21.0" layoutY="27.0" onAction="#openHelp" ripplerFill="BLACK" style="-fx-background-color: #ff9000;" text="Help" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_show_alarm" buttonType="RAISED" layoutX="78.0" layoutY="27.0" onAction="#showALarms" prefHeight="25.0" prefWidth="85.0" ripplerFill="BLACK" style="-fx-background-color: #ff9000;" text="Show Alarm" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_add_alarm" buttonType="RAISED" layoutX="405.0" layoutY="319.0" onAction="#addAlarm" prefHeight="25.0" prefWidth="72.0" ripplerFill="BLACK" style="-fx-background-color: #ff9000;" text="Add Alarm" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="11.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btn_delete" buttonType="RAISED" layoutX="498.0" layoutY="319.0" onAction="#deleteAlarm" ripplerFill="BLACK" style="-fx-background-color: #ff9000;" text="Delete" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
