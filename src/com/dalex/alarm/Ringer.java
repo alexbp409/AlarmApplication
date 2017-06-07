@@ -1,5 +1,6 @@
 package com.dalex.alarm;
 
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -53,10 +54,24 @@ public class Ringer implements Runnable {
         TimerTask timerTask = new TimerTask() {
             @Override
             public void run() {
-                /*if (Alarm.localDate.getMonth() == Month.APRIL) {
-                    ring();
-                }*/
-                System.out.println(LocalTime.now());
+                if (Alarm.isIsRunning() == true) {
+                    if (Alarm.isIsRunning()) {
+                        if(Alarm.getHour() == LocalTime.now().getHour()) {
+                            if(Alarm.getMinute() == LocalTime.now().getMinute()) {
+                                if(Alarm.getSecond() == LocalTime.now().getSecond()) {
+                                    if (Alarm.getDay() == LocalDate.now().getDayOfYear()) {
+                                        Platform.runLater(new Runnable() {
+                                            @Override
+                                            public void run() {
+                                                ring();
+                                            }
+                                        });
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         };
         timer.scheduleAtFixedRate(timerTask, 0, 1000);

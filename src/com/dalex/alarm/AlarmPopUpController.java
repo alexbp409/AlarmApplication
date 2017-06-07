@@ -21,7 +21,11 @@ public class AlarmPopUpController {
 
     @FXML
     void snooze(ActionEvent event) {
-
+        btn_close_window.getScene().getWindow().hide();
+        Alarm.setMinute(Alarm.getMinute()+5);
     }
-
+    @FXML
+    void close(ActionEvent event) {
+        btn_close_window.getScene().getWindow().hide();
+    }
 }

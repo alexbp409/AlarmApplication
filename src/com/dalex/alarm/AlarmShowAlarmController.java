@@ -27,9 +27,7 @@ public class AlarmShowAlarmController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        if(Alarm.localDate != null && Alarm.localTime != null) {
-            display_time.setText(Alarm.localTime.toString());
-            display_date.setText(Alarm.localDate.toString());
-        }
+        display_time.setText(Alarm.getHour() + ":" + Alarm.getMinute() + ":" + Alarm.getSecond());
+       // display_date.setText(Alarm.getDay() + "'th day of the year.");
     }
 }

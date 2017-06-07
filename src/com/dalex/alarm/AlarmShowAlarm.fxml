@@ -33,6 +33,5 @@
       <Line endX="520.0" layoutY="224.0" stroke="#ff9000" strokeWidth="8.0" />
       <Line endX="224.0" layoutX="408.0" layoutY="112.0" rotate="90.0" stroke="#ff9000" strokeWidth="8.0" />
       <Line endX="224.0" layoutX="-108.0" layoutY="112.0" rotate="90.0" stroke="#ff9000" strokeWidth="8.0" />
-      <JFXButton fx:id="test" layoutX="351.0" layoutY="185.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

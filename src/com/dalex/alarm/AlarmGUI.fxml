@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXTimePicker?>
 <?import eu.hansolo.medusa.Clock?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.RadialGradient?>
@@ -12,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dalex.alarm.AlarmGUIController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dalex.alarm.AlarmGUIController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" height="163.0" layoutX="374.0" layoutY="27.0" stroke="#ff9000" strokeType="INSIDE" width="200.0">
          <fill>
@@ -55,8 +56,14 @@
       <JFXTimePicker fx:id="time" defaultColor="#ff9000" layoutX="401.0" layoutY="236.0" promptText="Enter Time" />
       <JFXDatePicker fx:id="date" defaultColor="#ff9000" layoutX="401.0" layoutY="264.0" promptText="Enter Date" />
       <Clock fx:id="clock" backgroundPaint="#ffffff00" borderPaint="#ffffff00" layoutX="78.0" layoutY="67.0" lcdDesign="BLUE" running="true" skinType="PEAR" />
-      <Label fx:id="weather" layoutX="498.0" layoutY="55.0" prefHeight="108.0" prefWidth="61.0" textAlignment="CENTER" />
-      <ImageView fx:id="weather_icon" fitHeight="108.0" fitWidth="114.0" layoutX="384.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="weather" contentDisplay="CENTER" layoutX="401.0" layoutY="128.0" prefHeight="56.0" prefWidth="171.0" textFill="#da821c">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <ImageView fx:id="weather_icon" fitHeight="74.0" fitWidth="110.0" layoutX="443.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../sun.png" />
+         </image></ImageView>
       <JFXButton fx:id="btn_help" buttonType="RAISED" layoutX="21.0" layoutY="27.0" onAction="#openHelp" ripplerFill="BLACK" style="-fx-background-color: #ff9000;" text="Help" textAlignment="CENTER">
          <font>
             <Font name="System Bold" size="12.0" />

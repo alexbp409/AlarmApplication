@@ -16,8 +16,10 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import net.aksingh.owmjapis.CurrentWeather;
+import net.aksingh.owmjapis.OpenWeatherMap;
 
-import javax.sound.midi.SysexMessage;
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -64,24 +66,30 @@ public class AlarmGUIController implements Initializable {
         LocalDate date = this.date.getValue();
 
         if (time != null && date != null) {
-            Alarm.localTime = time;
-            Alarm.localDate = date;
+            Alarm.setHour(time.getHour());
+            Alarm.setMinute(time.getMinute());
+            Alarm.setSecond(time.getSecond());
+
+            Alarm.setDay(date.getDayOfYear());
         }
-        System.out.println(time.toString());
-        System.out.println(date.toString());
+        System.out.println(Alarm.getDay());
+
         try {
             Alarm.save();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        thread.start();
+
+        Alarm.setIsRunning(true);
     }
 
     @FXML
     void deleteAlarm(ActionEvent event) {
-        Alarm.localDate = null;
-        Alarm.localTime = null;
-        thread.stop();
+        Alarm.setDay(0);
+        Alarm.setHour(0);
+        Alarm.setMinute(0);
+        Alarm.setSecond(0);
+        Alarm.setIsRunning(false);
         System.out.println("Your alarm has been deleted.");
     }
 
@@ -121,14 +129,29 @@ public class AlarmGUIController implements Initializable {
         stage.show();
     }
 
-    @FXML
-    void snooze(ActionEvent event) {
-
-    }
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //initalize weather
+        OpenWeatherMap owm = new OpenWeatherMap("43cc314d1d3638a6d66d158958b53fab");
+        CurrentWeather cWeather = null;
+        try {
+            cWeather = owm.currentWeatherByCityName("Raleigh");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        
+        weather.setText("Current Temp: " + Float.toString(cWeather.getMainInstance().getTemperature()) + "°F");
+
+        weather_icon.setImage(new Image("file:sun.png"));
+
+        //change order to make sense
+        /*if (cWeather.getRainInstance().getRain() > new Float(.5)) {
+            weather_icon.setImage(new Image("file:rain.png"));
+        }*/
+        if (cWeather.getCloudsInstance().getPercentageOfClouds() > new Float(.5)) {
+            weather_icon.setImage(new Image("file:cloudy.png"));
+        } else {
+            weather_icon.setImage(new Image("file:partly.png"));
+        }
     }
 }
 

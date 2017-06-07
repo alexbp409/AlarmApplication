@@ -16,6 +16,8 @@ import java.util.ArrayList;
 
 public class Main extends Application {
 
+    private Thread thread = new Thread(new Ringer());
+
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("AlarmGUI.fxml"));
@@ -23,9 +25,7 @@ public class Main extends Application {
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.show();
 
-        System.out.println();
-        Ringer r = new Ringer();
-        Alarm.save();
+        thread.start();
     }
 
 
