@@ -15,5 +15,6 @@
     <orderEntry type="library" name="jfoenix1" level="project" />
     <orderEntry type="library" name="Medusa-7.91" level="project" />
     <orderEntry type="library" name="owm-japis-2.5.0.31" level="project" />
+    <orderEntry type="library" name="net.aksingh:owm-japis:2.5.0.3" level="project" />
   </component>
 </module>
